@@ -31,7 +31,54 @@ To install [AUR- Hyprland](https://aur.archlinux.org/packages/hyprshade) on Arch
 
     yay -S hyprshade
 
+
+To install using pacman 
+
+```
+sudo pacman -S --needed base-devel
+```
+This install baisc Dependencies
+```
+git clone https://aur.archlinux.org/hyprshade.git
+cd hyprshade
+makepkg -si
+```
+ 
+If your distribution isn't officially supported, you can also install directly
+from [PyPI](https://pypi.org/project/hyprshade/) with pip:
+
+```sh
+pip install --user hyprshade
+```
+
+Or with [pipx](https://pypa.github.io/pipx/):
+
+```sh
+pipx install hyprshade
+```
+
+
+## Usage
 the command `blue light shader` is the one use to change the screen color temperature.
+
+```text
+Usage: hyprshade [OPTIONS] COMMAND [ARGS]...
+
+Commands:
+  auto     Set screen shader on schedule
+  current  Print current screen shader
+  install  Install systemd user units
+  ls       List available screen shaders
+  off      Turn off screen shader
+  on       Turn on screen shader
+  toggle   Toggle screen shader
+```
+
+Commands which take a shader name accept either the basename:
+
+```sh
+hyprshade on blue-light-filter
+```
 
     hyprshade on blue-light-filter
 in case you want to increase the color `/usr/share/hyprshade/examples/config.toml` is where you can change the value
